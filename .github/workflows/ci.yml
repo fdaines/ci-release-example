@@ -10,6 +10,7 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
+    container: node:14.16
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
