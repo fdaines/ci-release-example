@@ -20,6 +20,14 @@ jobs:
         run: git fetch --tags origin
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
+      - name: Logs
+        run: git log -n 10 > foobar.txt
+      - name: Cat Logs
+        run: cat foobar.txt
+      - name: Last Release
+        run: git describe --tags
+      - name: Last Release 2
+        run: git describe --tags ${{ github.ref_name }}^
       - name: ReleaseNotes
         run: git log $(git describe --tags ${{github.ref_name}}^)..HEAD --pretty=format:'%h - %s' > ${{ github.workspace }}-CHANGELOG.txt
       - name: Release
