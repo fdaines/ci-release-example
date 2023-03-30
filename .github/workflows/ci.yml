@@ -6,7 +6,7 @@ on:
       - "v*.*.*"
 
 jobs:
-  build:
+  buildX:
     permissions:
       contents: write
       discussions: write
