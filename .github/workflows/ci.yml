@@ -27,7 +27,7 @@ jobs:
       - name: Last Release
         run: git describe --tags
       - name: Last Release 2
-        run: git describe --tags ${{ github.ref_name }}^
+        run: git describe --tags --abbrev=0 ${{ github.ref_name }}^
       - name: ReleaseNotes
         run: git log $(git describe --tags --abbrev=0 ${{github.ref_name}}^)..HEAD --pretty=format:'%h - %s' > ${{ github.workspace }}-CHANGELOG.txt
       - name: Release
