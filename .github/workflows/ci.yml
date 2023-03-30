@@ -17,7 +17,7 @@ jobs:
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
       - name: Logs
-        run: git log -n 10 --pretty=format='%h - %s' > foobar.txt
+        run: git log -n 10 > foobar.txt
       - name: Cat Logs
         run: cat foobar.txt
       - name: Last Release
