@@ -29,7 +29,7 @@ jobs:
       - name: Last Release 2
         run: git describe --tags ${{ github.ref_name }}^
       - name: ReleaseNotes
-        run: git log $(git describe --tags ${{github.ref_name}}^)..HEAD --pretty=format:'%h - %s' > ${{ github.workspace }}-CHANGELOG.txt
+        run: git log $(git describe --tags --abbrev=0 ${{github.ref_name}}^)..HEAD --pretty=format:'%h - %s' > ${{ github.workspace }}-CHANGELOG.txt
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
