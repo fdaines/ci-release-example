@@ -34,7 +34,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
 #          body: "Automatic Release..."
-          body_path: foobar.txt
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
           files: |
             Release.txt
             ${{ github.workspace }}-CHANGELOG.txt
